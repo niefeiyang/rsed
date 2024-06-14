@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Input</title>
+    <script>
+        async function submitForm(event) {
+            event.preventDefault(); // 阻止表单的默认提交行为
+            const repolink = document.getElementById("repolink").value;
+            const response = await fetch("/api/store_repo", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ repolink: repolink })
+            });
+            const result = await response.json();
+            document.getElementById("result").innerText = "The result is: " + result.result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Git Repo Search Engine</h1>
+    <form onsubmit="submitForm(event)">
+        <input type="url" id="repolink" name="repolink" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
+
