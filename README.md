@@ -8,6 +8,11 @@ $ cd rsed
 $ pip3 install pipreqs # Add all needed requirements.
 ```
 
+You should add your own `.env` file and store the OpenAI API key.
+```
+API_KEY=sk-proj-123456789...
+```
+
 Then run the fastapi framework.
 ```shell
 $ fastapi dev main.py
