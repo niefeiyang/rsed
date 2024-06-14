@@ -1,19 +1,18 @@
 # Repo Search Engine Development Repository
 
-## Modular Development
-### Module:rsed/cmdb: Chromadb File Retrieval and Vectorization
-|-> rsed/cmdb/main.py
-
-#### Usage Instructions:
+## Quick Start
 
 ```shell
-$ pip install chromadb argparse
+$ git clone https://github.com/niefeiyang/rsed.git
+$ cd rsed
+$ pip3 install pipreqs # Add all needed requirements.
 ```
 
-A demo application for RSE vector embedding & querry. The program has two mandatory parameters. First is the git repository address, and second is a brief description of the target file.
-
-**Example:**
-
+Then run the fastapi framework.
 ```shell
-$ python main.py https://github.com/lektor/lektor.git "The file related to package name."
+$ fastapi dev main.py
 ```
+
+After that, visit `http://127.0.0.1:8000/`.
+
+By pasting the repo url in the field and then submit, all the files in the repo will be downloaded, splitted and stored.

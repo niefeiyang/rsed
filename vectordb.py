@@ -20,7 +20,7 @@ chroma_client = chromadb.PersistentClient(path="./ChromaDB")
 collection = chroma_client.get_or_create_collection(name="python_code_collection", embedding_function=openai_ef)
 
 splitter = RecursiveCharacterTextSplitter.from_language(
-    language=Language.PYTHON, chunk_size=1800, chunk_overlap=0
+    language=Language.PYTHON, chunk_size=8000, chunk_overlap=0
 )
 
 def get_python_files(directory):

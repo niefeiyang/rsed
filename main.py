@@ -8,8 +8,6 @@ from repo_clone import *
 from vectordb import *
 from ask import *
 
-print("e")
-
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
