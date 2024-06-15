@@ -1,9 +1,6 @@
 import subprocess
 import os
 
-"""
-传入repo_url，克隆，输出文件夹目录
-"""
 def repo_clone(repo_url: str) -> str:
     try:
         print("=====Cloning Git Repository=====")

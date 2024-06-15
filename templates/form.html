@@ -4,7 +4,7 @@
     <title>Number Input</title>
     <script>
         async function submitForm(event) {
-            event.preventDefault(); // 阻止表单的默认提交行为
+            event.preventDefault();
             const repolink = document.getElementById("repolink").value;
             const response = await fetch("/api/store_repo", {
                 method: "POST",
@@ -14,7 +14,20 @@
                 body: JSON.stringify({ repolink: repolink })
             });
             const result = await response.json();
-            document.getElementById("result").innerText = "The result is: " + result.result;
+            document.getElementById("repo_result").innerText = "The result is: " + result.result;
+        }
+        async function submitQuestionForm(event) {
+            event.preventDefault();
+            const question = document.getElementById("question").value;
+            const response = await fetch("/api/ask_question", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question: question })
+            });
+            const result = await response.json();
+            document.getElementById("question_result").innerText = "The answer is: " + result.answer;
         }
     </script>
 </head>
@@ -24,7 +37,14 @@
         <input type="url" id="repolink" name="repolink" required>
         <button type="submit">Submit</button>
     </form>
-    <div id="result"></div>
+    <div id="repo_result"></div>
+
+    <h2>Ask a Question</h2>
+    <form onsubmit="submitQuestionForm(event)">
+        <input type="text" id="question" name="question" required>
+        <button type="submit">Ask</button>
+    </form>
+    <div id="question_result"></div>
 </body>
 </html>
 

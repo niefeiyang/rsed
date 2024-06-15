@@ -10,7 +10,6 @@ load_dotenv()
 def ask(question: str):
     chroma_results = query_chromadb(question)
 
-    # 从查询结果中获取documents和ids
     documents = chroma_results.get('documents', [])
     ids = chroma_results.get('ids', [])
 
@@ -23,6 +22,6 @@ def ask(question: str):
         {"role": "user", "content": user_message},
     ])
 
-    print(response.choices[0].message.content.strip())
+    return response.choices[0].message.content.strip()
 
 

@@ -29,11 +29,7 @@ async def store_repo(store_request: StoreRequest):
         split_and_store_files(repo_path)
     return {"result": "success"}
 
-@app.post("/api/ask")
+@app.post("/api/ask_question")
 async def ask_def(ask_request: AskRequest):
-        result = ask(ask_request.question)
-        return {"answer": result}
-
-
-
-
+        answer = ask(ask_request.question)
+        return {"answer": answer}
