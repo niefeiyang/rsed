@@ -9,21 +9,20 @@ $ git clone https://github.com/niefeiyang/rsed.git
 
 2. Create a python virtual environment
 ```shell
-$ python -m venv rsed #Create a virtual environment for repo rsed
+$ cd rsed
+$ python -m venv venv #Create a virtual environment for repo rsed
 ```
 
 3. Activate the virtual environment:
 
 On Unix:
 ```shell
-$ cd rsed
-$ source bin/activate #Activate the virtual environment
+$ source venv/bin/activate #Activate the virtual environment
 ```
 
 On Windows:
 ```
-$ cd rsed
-$ Scripts\activate
+$ venv\Scripts\activate
 ```
 
 3. Install dependencies
