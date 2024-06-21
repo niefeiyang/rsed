@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Number Input</title>
+    <title>KAKAPO Code Search</title>
+    <link rel="stylesheet" href="./static/style.css">
     <script>
         async function submitForm(event) {
             event.preventDefault();
@@ -32,19 +33,22 @@
     </script>
 </head>
 <body>
-    <h1>Git Repo Search Engine</h1>
+    <h1>KAKAPO Search Engine</h1>
+    <div class="query_box">
+    <span>Repo URL:</span>
     <form onsubmit="submitForm(event)">
         <input type="url" id="repolink" name="repolink" required>
         <button type="submit">Submit</button>
     </form>
-    <div id="repo_result"></div>
+    <div id="repo_result"></div></div>
 
-    <h2>Ask a Question</h2>
+    <div class="query_box">
+    <span>Ask a Question</span>
     <form onsubmit="submitQuestionForm(event)">
         <input type="text" id="question" name="question" required>
         <button type="submit">Ask</button>
     </form>
-    <div id="question_result"></div>
+    <div id="question_result"></div></div>
 </body>
 </html>
 
